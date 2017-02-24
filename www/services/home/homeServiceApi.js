@@ -3,11 +3,22 @@
 
 	angular
 		.module('mk.services')
-		.controller('homeServiceApi', homeServiceApi);
+		.factory('homeServiceApi', homeServiceApi);
 		
-		homeServiceApi.inject = [];
+		homeServiceApi.inject = ['$http','config'];
 
-		function homeServiceApi() {
-			var vm = this;
+		function homeServiceApi($http ,config) {
+			
+			var _getUser = function (objParam) {
+				console.log(config.apiUrl);
+				return $http.get(config.apiUrl+'users/'+objParam)
+					.then(function (result) {
+						return result;
+					});
+			};
+
+			return {
+				getUser:_getUser
+			};
 		}
 })();

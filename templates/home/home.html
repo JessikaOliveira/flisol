@@ -1,3 +1,11 @@
 <div>
-	<h1>Basic boilerplate for small soluctions</h1>
+	<input class="form-control" type="text" name="name"
+	ng-keyup="vm.getUser($event, name)"
+	ng-model="name">
+</div>
+
+<div ng-show="vm.result">
+	<pre>
+		{{vm.result | json}}
+	</pre>
 </div>
