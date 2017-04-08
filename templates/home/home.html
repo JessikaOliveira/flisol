@@ -5,7 +5,75 @@
 </div>
 
 <div ng-show="vm.result">
-	<pre>
-		{{vm.result | json}}
-	</pre>
-</div>
+	
+</div> -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a id="text-header" class="navbar-brand" href="#">
+                	<img id="logo-header" src="./assets/img/flisol.png">
+            		</a>
+            </div>          
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+        <div class="row" style="padding-top:60px;height: 460px">
+            <div class="col-md-12">
+            	<div class="col-sm-4">
+	              
+	            </div>
+	            <div class="col-sm-4 text-center">
+		            <div>
+		            	<input type="text" name="search" class="form-control" placeholder="Digite um usuário" 
+		            		ng-model="search"
+		            		ng-keypress="vm.getUser($event,search)">
+		            </div>
+	            	<div ng-if="vm.result">	            		
+	            		<a href="{{vm.result.html_url}}" target="_blank" style="color: inherit;">
+		                <img id="user-avatar" class="img-circle img-responsive img-center" 
+		                	ng-src="{{vm.result.avatar_url}}" alt=""
+		                	ng-if="vm.result.avatar_url">
+                	</a>
+	                <h2>{{vm.result.name}}</h2>
+	                <h5><a href="https://www.google.com.br/#safe=off&q={{vm.result.location}}" target="_blank">{{vm.result.location}}</a></h5>
+	                <p>{{vm.result.bio}}</p>
+	                <p ng-show="vm.result.repos_url">Repositórios <a href="{{vm.result.repos_url}}">{{vm.result.public_repos}}</a></p>
+	            	</div>
+	            	<div>
+	            		<p 
+	            			ng-if="vm.error">
+	            				{{vm.error}}
+	            		</p>
+	            	</div>
+	            </div>
+	            <div class="col-sm-4">
+	                
+	            </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+				<!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="text-center">Copyright &copy; FLISOL - Festival Latino-americano de Instalação de Software Livre</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container

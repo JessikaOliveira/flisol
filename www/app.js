@@ -4,12 +4,10 @@
 	angular.module('mk.services',[]);
 	angular.module('mk.directives',[]);
 
-	angular.module('guiacc',[
+	angular.module('minicurso',[
 		'ngRoute',
 		'toaster',		
 		'ngAnimate',
-		'ui.bootstrap',
-		'ngFileUpload',
 		'mk.controllers',
 		'mk.services',
 		'mk.directives'

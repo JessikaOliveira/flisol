@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module("guiacc")
+		.module("minicurso")
 		.value("config",{
 			apiUrl: "https://api.github.com/"
 		});

@@ -12,19 +12,20 @@
 			vm.getUser 	= getUser;
 			vm.result 	= {};
 
-			console.log(vm.result);
-
-			function getUser(event, objParam) {
+			function getUser(event,search) {				
 				if (event.keyCode === 13){
-						console.log(event);
-					homeServiceApi.getUser(objParam)
+					homeServiceApi.getUser(search)
 						.then(function (result) {
-							if (result.data) {
+							if (result) {								
 								vm.result = result.data;
-							}else{
-								toaster.pop('error','Usuário não encontrado');
+								console.log(vm.result);
+							} else {
+								
 							}
+						}).catch(function (e) {
+							vm.error = 'Usuário não foi encontrado';
 						});
+
 				}
 			}
 

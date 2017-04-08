@@ -1,3 +1,19 @@
 .button-table{
 	width: 30px;
 }
+
+#text-header {
+  color: #f39f23;
+}
+
+#logo-header {
+	max-width: 80px;
+	position: relative;
+  bottom: 7px;
+}
+
+#user-avatar{
+	padding-top:20px;
+	max-height: 230px;
+	margin: 0 auto;
+}
